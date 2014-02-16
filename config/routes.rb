@@ -1,4 +1,10 @@
 LocalGrowth::Application.routes.draw do
+
+  namespace :contests do
+    resources :surveys
+    resources :attempts, :only => [:new, :create]
+  end
+
   
   root 'static_pages#home'
 

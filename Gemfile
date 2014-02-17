@@ -17,7 +17,7 @@ gem 'rails_admin'
 gem 'bcrypt-ruby' 
 
 # Gem for helping with polls
-gem 'survey', :git => 'git://github.com/runtimerevolution/survey.git'
+#gem 'survey', :git => 'git://github.com/runtimerevolution/survey.git'
 
 # Javascript related gems
 gem 'uglifier', '>= 1.3.0'        # Removes all spaces from css files.

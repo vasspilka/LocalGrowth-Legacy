@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook]
 
 
-  has_surveys
   
   has_many :phones, as: :phoneable
   #Relationship with other users       
@@ -28,6 +27,10 @@ class User < ActiveRecord::Base
   #Relationship with Events
   has_many :attendings, foreign_key: "user_id", dependent: :destroy
   has_many :attended_events, through: :attendings, source:  :event
+
+  #Relationship with Answers
+  has_many :answers, foreign_key: "user_id", dependent: :destroy
+  has_many :answered_options, through: :answers, source:  :option
 
   #Actions for attendings
   def attended?(event)

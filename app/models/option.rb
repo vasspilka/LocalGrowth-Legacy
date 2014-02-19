@@ -1,7 +1,7 @@
 class Option < ActiveRecord::Base
 
   #relations
-  belongs_to :question
+  belongs_to :poll
   has_many :answers
 
   # validations

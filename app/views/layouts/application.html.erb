@@ -40,7 +40,7 @@
         <% # End of EAD rendering %>
 
       </aside>
-      <%= render partial: "shared/poll.html.erb", collection: Poll.active unless Poll.active.blank?
+      <%= render partial: "shared/poll.html.erb", collection: Poll.active unless Poll.active.blank? %>
     </div>
 
     <%= render 'layouts/footer' %>

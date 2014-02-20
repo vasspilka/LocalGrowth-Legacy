@@ -1,17 +1,13 @@
 LocalGrowth::Application.routes.draw do
-
-  namespace :contests do
-    resources :surveys
-    resources :attempts, :only => [:new, :create]
-  end
-
   
   root 'static_pages#home'
 
   # Authentication
-  devise_for :admins , path_names: {sign_in: "sign_in",sign_out: "sign_out"}
-  devise_for :users , path_names: {sign_in: "login",sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :admins
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  devise_for :users , path_names: {sign_in: "login",sign_out: "logout"},
+                      controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   # Users
   resources :users do
